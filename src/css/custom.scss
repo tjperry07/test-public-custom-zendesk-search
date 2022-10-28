@@ -1,0 +1,49 @@
+.search-icon,
+.suggestion-list[data-hc-class='searchbox'] {
+  display: none;
+}
+.aa-DetachedContainer--modal{
+  top:6%;
+}
+.keyboard-shortcut {
+  &::before,
+  &::after {
+    align-items: center;
+    background: var(--docsearch-key-gradient);
+    border-radius: 3px;
+    box-shadow: var(--docsearch-key-shadow);
+    color: var(--docsearch-muted-color);
+    display: flex;
+    height: 18px;
+    justify-content: center;
+    margin-right: 0.4em;
+    padding-bottom: 2px;
+    position: relative;
+    top: -1px;
+    width: 20px;
+    font-size: 14px;
+  }
+
+  &::before {
+    order: 5;
+    content: attr(data-key);
+  }
+
+  &::after {
+    content: '';
+    margin-left: auto;
+    background-image: url(../assets/ctrl_icon.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  &--mac::after {
+    content: '⌘';
+    background: var(--docsearch-key-gradient);
+  }
+
+  &.no-meta::after {
+    display: none;
+  }
+}

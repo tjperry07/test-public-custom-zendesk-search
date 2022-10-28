@@ -1,0 +1,59 @@
+/**
+* Not using @tailwind base because there is no way to scope the styles and it can mess with the Zendesk Theme.
+**/
+
+.tw-based {
+  *,
+  *::before,
+  *::after {
+    border: 0 solid;
+  }
+
+  button,
+  input,
+  optgroup,
+  select,
+  textarea {
+    color: inherit;
+    line-height: inherit;
+    padding: 0;
+  }
+
+  button {
+    background-color: transparent;
+    font-family: inherit;
+  }
+
+  a {
+    @apply stl-text-nebula-600;
+  }
+
+  blockquote,
+  dd,
+  dl,
+  figure,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  hr,
+  p,
+  pre {
+    margin: 0;
+  }
+}
+
+@tailwind components;
+@tailwind utilities;
+
+mark {
+  @apply stl-bg-transparent;
+  @apply stl-text-nebula-500;
+
+}
+
+.width-205 {
+  min-width: 205px;
+}

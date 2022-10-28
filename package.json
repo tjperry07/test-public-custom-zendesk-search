@@ -1,0 +1,92 @@
+{
+  "name": "@algolia/algolia-custom-helpcenter-search",
+  "version": "2.3.11",
+  "description": "Algolia's Zendesk Help Center search implementation",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/algolia/custom-zendesk-search.git"
+  },
+  "author": "Alphonse Bouy <alphonse.bouy@gmail.com>",
+  "license": "MIT",
+  "files": [
+    "lib"
+  ],
+  "main": "lib/algolia-custom-helpcenter-search",
+  "devDependencies": {
+    "@algolia/client-search": "^4.10.3",
+    "@babel/core": "^7.14.8",
+    "@babel/plugin-transform-typescript": "^7.15.0",
+    "@babel/preset-env": "^7.14.9",
+    "@babel/preset-react": "^7.14.5",
+    "@babel/preset-typescript": "^7.14.5",
+    "@testing-library/dom": "^8.1.0",
+    "@testing-library/jest-dom": "^5.14.1",
+    "@testing-library/preact": "^2.0.1",
+    "@testing-library/user-event": "^13.2.1",
+    "@types/jest": "^26.0.24",
+    "@types/react": "^17.0.14",
+    "@typescript-eslint/eslint-plugin": "^4.29.0",
+    "@typescript-eslint/parser": "^4.29.0",
+    "autoprefixer": "^10.3.1",
+    "babel-jest": "^27.0.6",
+    "concurrently": "^6.2.1",
+    "eslint": "^7.32.0",
+    "eslint-config-algolia": "^18.0.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-import-resolver-alias": "^1.1.2",
+    "eslint-plugin-eslint-comments": "^3.2.0",
+    "eslint-plugin-import": "^2.24.0",
+    "eslint-plugin-jsdoc": "^36.0.6",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-prettier": "^3.4.0",
+    "eslint-plugin-react": "^7.24.0",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "jest": "^27.0.6",
+    "module-alias": "^2.2.2",
+    "node-sass": "^6.0.1",
+    "postcss": "^8.3.6",
+    "prettier": "^2.3.2",
+    "sass": "^1.38.1",
+    "sass-loader": "^12.1.0",
+    "shipjs": "0.23.3",
+    "tailwindcss": "^2.2.6",
+    "ts-jest": "^27.0.4",
+    "ts-node": "^10.1.0",
+    "typescript": "^4.3.5",
+    "vite": "^2.5.1",
+    "vite-plugin-dts": "^0.7.0"
+  },
+  "dependencies": {
+    "@algolia/autocomplete-js": "^1.2.2",
+    "@algolia/autocomplete-preset-algolia": "^1.2.2",
+    "@algolia/autocomplete-theme-classic": "^1.2.2",
+    "@algolia/satellite": "^1.0.0-beta.109",
+    "@docsearch/css": "^3.0.0-alpha.39",
+    "algoliasearch": "^4.10.3",
+    "preact": "^10.5.14",
+    "preact-render-to-string": "^5.1.19",
+    "react-feather": "^2.0.9",
+    "throttle-debounce": "^3.0.1"
+  },
+  "scripts": {
+    "clean": "rm -rf .parcel-cache built dist lib",
+    "build": "tsc && vite build",
+    "dev": "vite dev",
+    "build:demo": "yarn clean && rm -rf demo && tsc && vite build dev --mode demo --base /custom-zendesk-search --outDir ../demo",
+    "build:demo2": "yarn clean && rm -rf demo && tsc && vite build dev --mode demo --outDir ../demo --base /demo-custom-zendesk-instantsearch",
+    "release:demo": "git add demo && git commit -m 'chore: demo release' && git push origin master",
+    "demo": "yarn build:demo && yarn release:demo",
+    "release": "yarn demo && shipjs prepare",
+    "test": "jest",
+    "lint": "eslint --ext .ts,.tsx src"
+  },
+  "types": "lib/index.es.d.ts",
+  "bugs": {
+    "url": "https://github.com/algolia/custom-zendesk-search/issues"
+  },
+  "homepage": "https://github.com/algolia/custom-zendesk-search#readme",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  }
+}
