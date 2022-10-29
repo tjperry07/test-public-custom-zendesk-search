@@ -18,7 +18,7 @@ export const AUTOCOMPLETE_PLACEHOLDER_TEMPLATE = (
 
 export const SOURCES: Source[] = [
   {
-    sourceId: 'community',
+    sourceId: 'Your ID A Here',
     // indexName: 'YOUR_INDEX_NAME_HERE',
     // client: algoliasearch('YOUR_APP_ID_HERE', 'YOUR_APP_SEARCH_KEY_HERE'),
     answerParams: {
@@ -27,21 +27,21 @@ export const SOURCES: Source[] = [
     searchUrl: 'YOUR SEARCH URL HERE',
   },
   {
-    sourceId: 'documentation',
+    sourceId: 'Your ID B Here',
     //indexName: 'YOUR_INDEX_NAME_HERE',
     //client: algoliasearch('YOUR_APP_ID_HERE', 'YOUR_APP_SEARCH_KEY_HERE'),
     answerParams: { attributesForPrediction: ['title', 'description'] },
     searchUrl: 'YOUR SEARCH URL HERE',
   },
   {
-    sourceId: 'help center',
+    sourceId: 'Your ID C Here',
     // indexName: 'YOUR_INDEX_NAME_HERE',
   //  client: algoliasearch('YOUR_APP_ID_HERE', 'YOUR_APP_SEARCH_KEY_HERE'),
     answerParams: { attributesForPrediction: ['title', 'body_safe'] },
     searchUrl: 'YOUR SEARCH URL HERE',
   },
   {
-    sourceId: 'academy',
+    sourceId: 'Your ID D Here',
      //  indexName: 'YOUR_INDEX_NAME_HERE',
     //client: algoliasearch('YOUR_APP_ID_HERE', 'YOUR_APP_SEARCH_KEY_HERE'),
     searchParams: {
