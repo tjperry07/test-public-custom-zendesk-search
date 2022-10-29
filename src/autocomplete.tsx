@@ -82,19 +82,19 @@ export const startAutocomplete = (
 
   const sources = [
     {
-      sourceId: 'instantsearch_helpcenter',
+      sourceId: 'Your ID Here',
       getItems({ query, state }) {
         const url = state.context.answerUrl as string;
         const id = url ? url.split('/').pop() : '';
 
         return getAlgoliaResults({
           searchClient: SOURCES.find(
-            (source) => source.sourceId === 'help center'
+            (source) => source.sourceId === 'Your ID name Here'
           ).client,
           queries: [
             {
               indexName: SOURCES.find(
-                (source) => source.sourceId === 'help center'
+                (source) => source.sourceId === 'Your ID name Here'
               ).indexName,
               query,
               params: {
@@ -132,16 +132,16 @@ export const startAutocomplete = (
       },
     } as AutocompleteSource<Hit<ZendeskHit> & { url: string }>,
     {
-      sourceId: 'instantsearch_doc',
+      sourceId: 'Your ID Here',
       getItems({ query, state }) {
         return getAlgoliaResults({
           searchClient: SOURCES.find(
-            (source) => source.sourceId === 'documentation'
+            (source) => source.sourceId === 'Your ID Name Here'
           ).client,
           queries: [
             {
               indexName: SOURCES.find(
-                (source) => source.sourceId === 'documentation'
+                (source) => source.sourceId === 'Your ID Name Here'
               ).indexName,
               query,
               params: {
@@ -174,16 +174,16 @@ export const startAutocomplete = (
       },
     } as AutocompleteSource<Hit<DocHit>>,
     {
-      sourceId: 'instantsearch_discourse',
+      sourceId: 'Your ID Here',
       getItems({ query, state }) {
         return getAlgoliaResults({
           searchClient: SOURCES.find(
-            (source) => source.sourceId === 'community'
+            (source) => source.sourceId === 'Your ID Name Here'
           ).client,
           queries: [
             {
               indexName: SOURCES.find(
-                (source) => source.sourceId === 'community'
+                (source) => source.sourceId === 'Your ID Name Here'
               ).indexName,
               query,
               params: {
@@ -216,14 +216,14 @@ export const startAutocomplete = (
       },
     } as AutocompleteSource<Hit<DiscourseHit>>,
     {
-      sourceId: 'instantsearch_academy',
+      sourceId: 'Your ID Here',
       getItems({ query, state }) {
         return getAlgoliaResults({
-          searchClient: SOURCES.find((source) => source.sourceId === 'academy')
+          searchClient: SOURCES.find((source) => source.sourceId === 'Your ID Name Here')
             .client,
           queries: [
             {
-              indexName: SOURCES.find((source) => source.sourceId === 'academy')
+              indexName: SOURCES.find((source) => source.sourceId === 'Your ID Name Here')
                 .indexName,
               query,
               params: {
