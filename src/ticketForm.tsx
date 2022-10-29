@@ -154,7 +154,6 @@ export const TicketFormApp = (): JSX.Element => {
 
     const { hits } = await getSortedHits(instantSources, e.target.value, {
       nbHits: 3,
-      // EXPERIMENTAL_illuminate: 1,
     });
 
     setGroupedHits(
