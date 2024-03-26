@@ -5,42 +5,64 @@ import type {
 } from '@algolia/client-search';
 import type { SearchClient } from 'algoliasearch/lite';
 
-export type DocHit = {
+
+export type DocHit ={
   title: string;
-  page_title: string;
   description: string;
-  tags: string[];
-  details: {
-    questions: string[];
-    is_token: boolean;
-  };
-  level: number;
-  variations: string[];
-  languages: string[];
-  url: string;
-  base_url: string;
-  hierarchy_level: number;
-  hierarchy: string[];
   anchor: string;
-  toc: Array<{
-    anchor: string;
-    title: string;
-  }>;
-  snippets: Record<string, unknown>;
-  content_structure: {
+  content: string;
+  hierarchy: {
     lvl0: string;
     lvl1?: string;
     lvl2?: string;
     lvl3?: string;
     lvl4?: string;
     lvl5?: string;
-  };
-  content_type: string;
+  },
+  hierarchy_radio: {
+    lvl0: string;
+    lvl1?: string;
+    lvl2?: string;
+    lvl3?: string;
+    lvl4?: string;
+    lvl5?: string;
+  },
   type: string;
-  type_level: number;
-  category: string;
+  tags: string[];
+  weight: {
+    page_rank: number;
+    level: number;
+    position: number;
+  },
+  url: string;
+  url_without_variables: string;
+  hierarchy_camel: [
+    {
+      lvl0: string;
+      lvl1?: string;
+      lvl2?: string;
+      lvl3?: string;
+      lvl4?: string;
+      lvl5?: string;
+    }
+  ],
+  hierarchy_radio_camel: {
+    lvl0: string;
+    lvl1?: string;
+    lvl2?: string;
+    lvl3?: string;
+    lvl4?: string;
+    lvl5?: string;
+  },
+  language: string;
+  version: string[];
+  docusaurus_tag: string;
+  url_without_anchor: string;
+  no_variables: boolean,
   objectID: string;
-};
+
+}
+
 
 export type DiscourseHit = {
   url: string;
@@ -94,6 +116,7 @@ const zendeskExampleHit = {
 };
 
 export type ZendeskHit = typeof zendeskExampleHit;
+
 export type AcademyHit = {
   description: string;
   id: string;

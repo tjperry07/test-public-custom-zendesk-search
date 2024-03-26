@@ -17,41 +17,49 @@ export const AUTOCOMPLETE_PLACEHOLDER_TEMPLATE = (
 ): string => `Search for ${placeholder}`;
 
 export const SOURCES: Source[] = [
-  {
-    sourceId: 'community',
-    // indexName: 'YOUR_INDEX_NAME_HERE',
-    // client: algoliasearch('YOUR_APP_ID_HERE', 'YOUR_APP_SEARCH_KEY_HERE'),
-    answerParams: {
-      attributesForPrediction: ['content'],
-    },
-    searchUrl: 'YOUR SEARCH URL HERE',
-  },
+  // {
+  //   sourceId: 'community',
+  //   // indexName: 'YOUR_INDEX_NAME_HERE',
+  //   // client: algoliasearch('YOUR_APP_ID_HERE', 'YOUR_APP_SEARCH_KEY_HERE'),
+  //   answerParams: {
+  //     attributesForPrediction: ['content'],
+  //   },
+  //   searchUrl: 'YOUR SEARCH URL HERE',
+  // },
   {
     sourceId: 'documentation',
-    //indexName: 'YOUR_INDEX_NAME_HERE',
-    //client: algoliasearch('YOUR_APP_ID_HERE', 'YOUR_APP_SEARCH_KEY_HERE'),
-    answerParams: { attributesForPrediction: ['title', 'description'] },
-    searchUrl: 'YOUR SEARCH URL HERE',
+      indexName: 'Doc Search Test',
+      client: algoliasearch('4SWYKD9R8D', '2f8b2415d8e2064f58ba6a210d375205'),
+      searchUrl: 'https://deploy-preview-16--coalesce-dev-docs-mvp.netlify.app',
+      searchParams:{
+        attributesToHighlight: ['title'],
+        attributesToSnippet: ['description']
+      }
+
   },
   {
     sourceId: 'help center',
-    // indexName: 'YOUR_INDEX_NAME_HERE',
-  //  client: algoliasearch('YOUR_APP_ID_HERE', 'YOUR_APP_SEARCH_KEY_HERE'),
-    answerParams: { attributesForPrediction: ['title', 'body_safe'] },
-    searchUrl: 'YOUR SEARCH URL HERE',
-  },
-  {
-    sourceId: 'academy',
-     //  indexName: 'YOUR_INDEX_NAME_HERE',
-    //client: algoliasearch('YOUR_APP_ID_HERE', 'YOUR_APP_SEARCH_KEY_HERE'),
-    searchParams: {
-      facetFilters: [['type:guide', 'type:resource']],
-    },
-    answerParams: {
-      attributesForPrediction: ['name', 'content', 'description'],
-    },
-      searchUrl: 'YOUR SEARCH URL HERE',
-  },
+      indexName: 'Zendesk',
+      client: algoliasearch('4SWYKD9R8D', '2f8b2415d8e2064f58ba6a210d375205'),
+      searchUrl: 'https://coalescesoftwareinc.zendesk.com/hc/en-us',
+      searchParams:{
+        attributesToHighlight: ['title'],
+        attributesToSnippet: ['description']
+      }
+
+  }
+  // {
+  //   sourceId: 'academy',
+  //    //  indexName: 'YOUR_INDEX_NAME_HERE',
+  //   //client: algoliasearch('YOUR_APP_ID_HERE', 'YOUR_APP_SEARCH_KEY_HERE'),
+  //   searchParams: {
+  //     facetFilters: [['type:guide', 'type:resource']],
+  //   },
+  //   answerParams: {
+  //     attributesForPrediction: ['name', 'content', 'description'],
+  //   },
+  //     searchUrl: 'YOUR SEARCH URL HERE',
+  // },
 ];
 
 export const titleAttribute = (item): string | string[] => {
@@ -84,8 +92,8 @@ export const contentAttribute = (
 
 export const BASE_URLS: Record<SourceId, string> = {
   community: 'https://discourse.algolia.com',
-  documentation: 'https://algolia.com',
-  'help center': 'https://algolia.zendesk.com/hc',
+  documentation: '',
+  'help center': 'https://coalescesoftwareinc.zendesk.com/hc',
   academy: 'https://academy.algolia.com',
 };
 
